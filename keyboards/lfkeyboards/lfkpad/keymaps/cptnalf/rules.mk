@@ -15,15 +15,12 @@ AUDIO_ENABLE = no               # Audio output on port C6
 UNICODE_ENABLE = no             # Unicode
 BLUETOOTH_ENABLE = no           # Enable Bluetooth with the Adafruit EZ-Key HID
 RGBLIGHT_ENABLE = yes           # Enable WS2812 RGB underlight.
-RGBLIGHT_CUSTOM_DRIVER = yes    # RGB code is implemented in lefkeyboards, not qmk base
+RGBLIGHT_CUSTOM_DRIVER = no    # RGB code is implemented in lefkeyboards, not qmk base
 SLEEP_LED_ENABLE = yes          # Breathing sleep LED during USB suspend
 TAP_DANCE_ENABLE = no
 
 ISSI_ENABLE = yes           # If the I2C pullup resistors aren't install this must be disabled
 WATCHDOG_ENABLE = no       # Resets keyboard if matrix_scan isn't run every 250ms
-
-
-
 
 # # Set the LFK78 hardware version. This is defined in rules.mk, but can be overidden here if desired
 # #

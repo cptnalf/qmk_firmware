@@ -159,6 +159,20 @@ void reset_keyboard_kb() {
     reset_keyboard();
 }
 
+#ifdef RGBLIGHT_ENABLE
+
+extern void set_rgb(uint8_t rgb_led, uint8_t red, uint8_t green, uint8_t blue);
+
+void rgblight_call_driver(LED_TYPE *ledfoo, uint8_t led_num) {
+    /* take the matrix def and map to the correct led. */
+
+    for(uint8_t i = 0; (i < sizeof(rgb_sequence)) && (i < RGBLED_NUM); i++){
+        set_rgb(rgb_sequence[i], led[i].r, led[i].g, led[i].b);
+    }
+}
+
+#endif
+
 // LFK lighting info
 const uint8_t rgb_matrices[] = { 0, 1 };
 const uint8_t rgb_sequence[] = {

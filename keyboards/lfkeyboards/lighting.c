@@ -86,9 +86,11 @@ void set_underglow(uint8_t red, uint8_t green, uint8_t blue){
 #endif
 }
 
-
+#ifndef LFK_NORGBLIGHT_SET
 void rgblight_set(void) {
 #ifdef RGBLIGHT_ENABLE
+/* take the matrix def and map to the correct led. */
+
     for(uint8_t i = 0; (i < sizeof(rgb_sequence)) && (i < RGBLED_NUM); i++){
         if(rgblight_config.enable){
             set_rgb(rgb_sequence[i], led[i].r, led[i].g, led[i].b);
@@ -98,6 +100,7 @@ void rgblight_set(void) {
     }
 #endif
 }
+#endif
 
 void set_backlight_by_keymap(uint8_t col, uint8_t row){
 #ifdef RGBLIGHT_ENABLE
