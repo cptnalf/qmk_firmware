@@ -9,7 +9,7 @@
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    dztech
 #define PRODUCT         MT96
-#define DESCRIPTION     Keyboard
+#define DESCRIPTION     YMDK96 Hotswap
 
 /* key matrix size */
 #define MATRIX_ROWS 12
@@ -26,30 +26,29 @@
 /* number of backlight levels */
 #define BACKLIGHT_PIN B6
 #ifdef BACKLIGHT_PIN
-#define BACKLIGHT_LEVELS 5
+#define BACKLIGHT_LEVELS 8
 #endif
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
+//#define LOCKING_SUPPORT_ENABLE
 
 /* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
-
+//#define LOCKING_RESYNC_ENABLE
 
 
 #define RGB_DI_PIN E2
 #ifdef RGB_DI_PIN
 #define RGBLIGHT_ANIMATIONS
 
-#define RGBLED_NUM 22
-#define RGBLIGHT_HUE_STEP 8
-#define RGBLIGHT_SAT_STEP 8
-#define RGBLIGHT_VAL_STEP 8
+#define RGBLED_NUM 18
+#define RGBLIGHT_HUE_STEP 10
+#define RGBLIGHT_SAT_STEP 17
+#define RGBLIGHT_VAL_STEP 17
 #define RGBLIGHT_SLEEP
-#define RGBLIGHT_LIMIT_VAL 150
+// #define RGBLIGHT_LIMIT_VAL 150
 
 #define RGBLIGHT_LAYERS
 
