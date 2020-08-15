@@ -6,12 +6,13 @@
 #define _FN_APP LT(_FN, KC_APP)
 
 const rgblight_segment_t PROGMEM kbfx_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-  {0, 2, HSV_MAGENTA },
-  {16, 2, HSV_MAGENTA }
+  {7, 3, HSV_CYAN }
 );
 
 const rgblight_segment_t PROGMEM fxr_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-  {7, 3, HSV_CYAN }
+  {0, 1, HSV_MAGENTA },
+  {16, 2, HSV_MAGENTA }
+
 );
 
 const rgblight_segment_t* const PROGMEM cptnalf_rgblayers[] = RGBLIGHT_LAYERS_LIST(
@@ -124,8 +125,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-  rgblight_set_layer_state(1, layer_state_cmp(state, 1));
-  rgblight_set_layer_state(2, layer_state_cmp(state, 2));
+  rgblight_set_layer_state(0, layer_state_cmp(state, _FN));
+  rgblight_set_layer_state(1, layer_state_cmp(state, _KB));
   return state;
 }
 
